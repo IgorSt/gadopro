@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GadoPro</string>
+
+    <string name="login_email_hint">E-mail</string>
+    <string name="login_password_hint">Senha</string>
+    <string name="login_enter_guess">Entrar como convidado</string>
+    <string name="login_start_session">Entrar</string>
+    <string name="login_warning">Atenção</string>
+    <string name="login_guess_can_lost_data">Ao continuar como convidado seus dados poderão ser perdidos!</string>
+    <string name="login_continue">Continuar</string>
+    <string name="login_create_account">Criar conta</string>
+</resources>
