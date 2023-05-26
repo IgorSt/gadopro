@@ -1,4 +1,4 @@
-package com.br.gadopro.view.home
+package com.br.gadopro.view.production
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,35 +8,36 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.br.gadopro.arq.lifecycle.EventObserver
-import com.br.gadopro.databinding.FragmentHomeBinding
+import com.br.gadopro.databinding.FragmentProductionBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class ProductionFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-    val binding get() = _binding!!
+    private var _binding: FragmentProductionBinding? = null
+    private val binding get() = _binding!!
 
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val productionViewModel: ProductionViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        lifecycle.addObserver(homeViewModel)
-        return FragmentHomeBinding.inflate(inflater, container, false).also {
+        lifecycle.addObserver(productionViewModel)
+        return FragmentProductionBinding.inflate(inflater, container, false).also {
             _binding = it
-            binding.viewModel = homeViewModel
+            binding.viewModel = productionViewModel
         }.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeViewModel.productionNavigate.observe(viewLifecycleOwner, EventObserver {
-            val direction = HomeFragmentDirections.actionHomeToProduction()
-            findNavController().navigate(direction)
+        binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+
+        productionViewModel.saveCow.observe(viewLifecycleOwner, EventObserver {
+            findNavController().navigateUp()
         })
     }
 

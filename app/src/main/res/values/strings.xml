@@ -9,4 +9,16 @@
     <string name="login_guess_can_lost_data">Ao continuar como convidado seus dados poderão ser perdidos!</string>
     <string name="login_continue">Continuar</string>
     <string name="login_create_account">Criar conta</string>
+
+    <string name="home_production">Produção</string>
+    <string name="home_health_management">Manejo sanitário</string>
+
+    <string name="production_insert_cow_details">Insira as informações do seu animal</string>
+    <string name="production_register">Registro</string>
+    <string name="production_identification_number">Número de identificação</string>
+    <string name="production_description">Descrição</string>
+    <string name="production_last_calf">Última cria</string>
+    <string name="production_calf">Bezerro</string>
+    <string name="production_heifer">Bezerra</string>
+    <string name="production_save">Salvar</string>
 </resources>

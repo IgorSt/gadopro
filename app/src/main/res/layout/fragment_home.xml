@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.br.gadopro.view.home.HomeViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -12,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_48"
+            android:onClick="@{() -> viewModel.onProductionClicked()}"
             app:cardBackgroundColor="@color/md_theme_light_tertiaryContainer"
             app:layout_constraintBottom_toTopOf="@+id/btn_health_management"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingVertical="@dimen/spacing_8"
-                android:text="Produção"
+                android:text="@string/home_production"
                 android:textAlignment="center"/>
         </com.google.android.material.card.MaterialCardView>
 
@@ -33,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_48"
             android:layout_marginTop="@dimen/spacing_16"
+            android:onClick="@{() -> viewModel.onHealthManagementClicked()}"
             app:cardBackgroundColor="@color/md_theme_light_tertiaryContainer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingVertical="@dimen/spacing_8"
-                android:text="Manejo sanitário"
+                android:text="@string/home_health_management"
                 android:textAlignment="center"/>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
