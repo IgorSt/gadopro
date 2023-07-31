@@ -9,7 +9,11 @@
         android:id="@+id/home"
         android:name="com.br.gadopro.view.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_insertCowFragment"
+            app:destination="@id/insertCowFragment" />
+    </fragment>
     <fragment
         android:id="@+id/login"
         android:name="com.br.gadopro.view.login.LoginFragment"
@@ -18,5 +22,19 @@
         <action
             android:id="@+id/action_login_to_home"
             app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/production"
+        android:name="com.br.gadopro.view.production.ProductionFragment"
+        android:label="ProductionFragment"
+        tools:layout="@layout/fragment_production"/>
+    <fragment
+        android:id="@+id/insertCowFragment"
+        android:name="com.br.gadopro.view.production.insert.InsertCowFragment"
+        android:label="InsertCowFragment"
+        tools:layout="@layout/fragment_insert_cow">
+        <action
+            android:id="@+id/action_insertCowFragment_to_production"
+            app:destination="@id/production" />
     </fragment>
 </navigation>

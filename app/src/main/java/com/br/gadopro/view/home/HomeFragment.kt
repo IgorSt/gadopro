@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.br.gadopro.arq.lifecycle.EventObserver
 import com.br.gadopro.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -13,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
 
     private val homeViewModel: HomeViewModel by viewModels()
 
@@ -25,11 +27,18 @@ class HomeFragment : Fragment() {
         lifecycle.addObserver(homeViewModel)
         return FragmentHomeBinding.inflate(inflater, container, false).also {
             _binding = it
+            binding.viewModel = homeViewModel
         }.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        homeViewModel.productionNavigate.observe(viewLifecycleOwner, EventObserver {
+            HomeFragmentDirections.actionHomeToInsertCowFragment().also {
+                findNavController().navigate(it)
+            }
+        })
     }
 
     override fun onDestroy() {

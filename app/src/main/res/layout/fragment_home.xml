@@ -3,15 +3,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.br.gadopro.view.home.HomeViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.GadoPro.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:text="@string/home_what_control_today"
+            app:layout_constraintBottom_toTopOf="@id/btn_production"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btn_production"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_48"
+            android:onClick="@{() -> viewModel.onProductionClicked()}"
             app:cardBackgroundColor="@color/md_theme_light_tertiaryContainer"
             app:layout_constraintBottom_toTopOf="@+id/btn_health_management"
             app:layout_constraintTop_toTopOf="parent"
@@ -22,8 +40,8 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingVertical="@dimen/spacing_8"
-                android:text="Produção"
+                android:paddingVertical="@dimen/spacing_24"
+                android:text="@string/home_production"
                 android:textAlignment="center"/>
         </com.google.android.material.card.MaterialCardView>
 
@@ -33,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_48"
             android:layout_marginTop="@dimen/spacing_16"
+            android:onClick="@{() -> viewModel.onHealthManagementClicked()}"
             app:cardBackgroundColor="@color/md_theme_light_tertiaryContainer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,8 +61,8 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingVertical="@dimen/spacing_8"
-                android:text="Manejo sanitário"
+                android:paddingVertical="@dimen/spacing_24"
+                android:text="@string/home_health_management"
                 android:textAlignment="center"/>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
