@@ -41,8 +41,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_16"
-                    android:text="@string/production_insert_cow_details"
-                    android:textAlignment="center" />
+                    android:layout_marginHorizontal="@dimen/spacing_24"
+                    android:text="@string/production_insert_cow_details"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -51,6 +51,7 @@
                     android:layout_marginTop="@dimen/spacing_48">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/idNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/production_identification_number"
@@ -64,6 +65,7 @@
                     android:layout_marginTop="@dimen/spacing_16">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/production_description"
@@ -77,6 +79,7 @@
                     android:layout_marginTop="@dimen/spacing_16">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lastCalve"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/production_last_calf"
@@ -84,6 +87,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <RadioGroup
+                    android:id="@+id/calfRadioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/spacing_24"
@@ -109,12 +113,12 @@
                     android:layout_weight="1"/>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveCow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacing_16"
                     android:layout_marginHorizontal="@dimen/spacing_16"
-                    android:text="@string/production_save"
-                    android:onClick="@{() -> viewModel.onSaveCow()}"/>
+                    android:text="@string/production_save"/>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

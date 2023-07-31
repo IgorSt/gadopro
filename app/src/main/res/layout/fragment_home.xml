@@ -13,6 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.GadoPro.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:text="@string/home_what_control_today"
+            app:layout_constraintBottom_toTopOf="@id/btn_production"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btn_production"
             android:layout_width="match_parent"
@@ -29,7 +40,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingVertical="@dimen/spacing_8"
+                android:paddingVertical="@dimen/spacing_24"
                 android:text="@string/home_production"
                 android:textAlignment="center"/>
         </com.google.android.material.card.MaterialCardView>
@@ -50,7 +61,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingVertical="@dimen/spacing_8"
+                android:paddingVertical="@dimen/spacing_24"
                 android:text="@string/home_health_management"
                 android:textAlignment="center"/>
         </com.google.android.material.card.MaterialCardView>

@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
 
     private val homeViewModel: HomeViewModel by viewModels()
 
@@ -35,8 +35,9 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         homeViewModel.productionNavigate.observe(viewLifecycleOwner, EventObserver {
-            val direction = HomeFragmentDirections.actionHomeToProduction()
-            findNavController().navigate(direction)
+            HomeFragmentDirections.actionHomeToInsertCowFragment().also {
+                findNavController().navigate(it)
+            }
         })
     }
 

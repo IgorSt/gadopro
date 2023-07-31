@@ -12,6 +12,7 @@
 
     <string name="home_production">Produção</string>
     <string name="home_health_management">Manejo sanitário</string>
+    <string name="home_what_control_today">O que vamos controlar hoje ?</string>
 
     <string name="production_insert_cow_details">Insira as informações do seu animal</string>
     <string name="production_register">Registro</string>
@@ -21,4 +22,5 @@
     <string name="production_calf">Bezerro</string>
     <string name="production_heifer">Bezerra</string>
     <string name="production_save">Salvar</string>
+    <string name="production_title">Produção</string>
 </resources>

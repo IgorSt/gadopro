@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.br.gadopro.arq.lifecycle.EventObserver
+import com.br.gadopro.data.model.Cow
 import com.br.gadopro.databinding.FragmentProductionBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,10 +35,17 @@ class ProductionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+        binding.btnSaveCow.setOnClickListener { insertCow() }
+    }
 
-        productionViewModel.saveCow.observe(viewLifecycleOwner, EventObserver {
-            findNavController().navigateUp()
-        })
+    private fun insertCow() {
+        val newCow = Cow(
+            id = binding.idNumber.text.toString(),
+            name = binding.description.text.toString()
+        )
+
+        productionViewModel.insertCow(newCow)
+        findNavController().navigateUp()
     }
 
     override fun onDestroy() {

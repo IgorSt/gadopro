@@ -28,9 +28,9 @@ open class Event<out T>(private val content: T) {
  * Um observer que lê o valor do Event UMA UNICA VEZ
  */
 class EventObserver<T>(private val onEventUnhandled: (T) -> Unit) : Observer<Event<T>> {
-    override fun onChanged(event: Event<T>?) {
-        event?.getIfNotHandled()?.let { value ->
-            onEventUnhandled(value)
+    override fun onChanged(value: Event<T>) {
+        value.getIfNotHandled()?.let { event ->
+            onEventUnhandled(event)
         }
     }
 }

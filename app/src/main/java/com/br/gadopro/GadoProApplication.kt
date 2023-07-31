@@ -1,10 +1,10 @@
 package com.br.gadopro
 
-import androidx.multidex.MultiDexApplication
+import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class GadoProApplication : MultiDexApplication(){
+class GadoProApplication : Application(){
 
     override fun onCreate() {
         super.onCreate()

@@ -36,6 +36,7 @@
     </style>
 
     <style name="Theme.GadoPro.Title" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:textAlignment">center</item>
     </style>
 </resources>
